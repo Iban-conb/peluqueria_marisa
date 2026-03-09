@@ -4,13 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Peluquería Marisa · Intranet</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&family=Material+Icons+Round&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Material+Icons+Round&display=swap" rel="stylesheet"/>
 <style>
-/* ═══════════════════════════════════════════════
-   PALETA — Dark Salon · Gold Matte
-   Extraída de peluqueriamarisa.com
-   #111 oscuro dominante · #B8962E dorado acento
-═══════════════════════════════════════════════ */
 :root {
   --bg:          #111111;
   --bg-2:        #1A1A1A;
@@ -29,7 +24,7 @@
   --warning:     #8A6820;
   --error:       #8A3828;
   --info:        #2E5880;
-  --sidebar-w:   256px;
+  --sidebar-w:   260px;
   --header-h:    60px;
   --r-sm:        4px;
   --r-md:        8px;
@@ -37,16 +32,13 @@
   --t:           0.18s ease;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);display:flex;height:100vh;overflow:hidden;font-size:14px;}
 
-/* SIDEBAR */
+/* ── SIDEBAR ── */
 .sidebar{width:var(--sidebar-w);background:var(--bg-2);border-right:1px solid var(--border);display:flex;flex-direction:column;height:100vh;flex-shrink:0;}
-.sb-logo{padding:22px 18px 16px;border-bottom:1px solid var(--border);}
-.brand{display:flex;align-items:center;gap:10px;}
-.brand-icon{width:36px;height:36px;background:var(--bg-4);border:1px solid var(--border-gold);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:16px;}
-.brand-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--text);line-height:1.2;}
-.brand-sub{font-size:0.6rem;color:var(--text-3);letter-spacing:1.5px;text-transform:uppercase;}
+.sb-logo{padding:20px 16px 16px;border-bottom:1px solid var(--border);text-align:center;}
+.sb-logo svg{display:block;margin:0 auto;}
+.sb-intranet{font-size:0.56rem;color:var(--text-3);letter-spacing:2px;text-transform:uppercase;margin-top:5px;}
 .nav{flex:1;padding:10px 8px;overflow-y:auto;scrollbar-width:none;}
 .nav::-webkit-scrollbar{display:none;}
 .nav-lbl{font-size:0.58rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-3);padding:12px 10px 4px;}
@@ -63,7 +55,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .u-name{font-size:0.8rem;font-weight:500;color:var(--text);}
 .u-role{font-size:0.66rem;color:var(--text-3);}
 
-/* MAIN */
+/* ── MAIN ── */
 .main{flex:1;display:flex;flex-direction:column;overflow:hidden;}
 .topbar{height:var(--header-h);background:var(--bg-2);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 22px;gap:12px;flex-shrink:0;}
 .tb-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--text);flex:1;}
@@ -76,23 +68,22 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .icon-btn:hover{background:var(--bg-3);color:var(--text);}
 .icon-btn .material-icons-round{font-size:18px;}
 .notif-dot{position:absolute;top:5px;right:5px;width:6px;height:6px;border-radius:50%;background:var(--gold);border:2px solid var(--bg-2);}
-
 .content{flex:1;overflow-y:auto;padding:22px 26px;scrollbar-width:thin;scrollbar-color:var(--bg-4) transparent;}
 .content::-webkit-scrollbar{width:5px;}
 .content::-webkit-scrollbar-thumb{background:var(--bg-4);border-radius:3px;}
 
-/* SECTIONS */
+/* ── SECTIONS ── */
 .section{display:none;}
 .section.active{display:block;animation:fadeUp .2s ease;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:none;}}
 
-/* CARD */
+/* ── CARD ── */
 .card{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;}
 .card-hdr{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
 .card-title{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;color:var(--text);}
 .card-body{padding:18px;}
 
-/* STAT CARDS */
+/* ── STATS ── */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px;}
 .stat{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px 18px;position:relative;transition:border-color var(--t);}
 .stat:hover{border-color:var(--border-gold);}
@@ -104,15 +95,14 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .stat-val{font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:600;color:var(--text);line-height:1;margin-bottom:4px;}
 .stat-sub{font-size:0.72rem;color:var(--text-3);}
 .stat-up{color:#5A9E6A;font-weight:600;}
-.stat-dn{color:#9E5A4A;font-weight:600;}
 .stat-warn{color:var(--gold);font-weight:600;}
 .stat-icon{position:absolute;top:14px;right:14px;width:34px;height:34px;background:var(--bg-3);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:16px;}
-.stat.g  .stat-icon{color:var(--gold);}
-.stat.b  .stat-icon{color:#6498c8;}
+.stat.g .stat-icon{color:var(--gold);}
+.stat.b .stat-icon{color:#6498c8;}
 .stat.gr .stat-icon{color:#6aaa82;}
 .stat.am .stat-icon{color:#c4a84e;}
 
-/* GRIDS */
+/* ── GRIDS ── */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
 .g21{display:grid;grid-template-columns:2fr 1fr;gap:14px;}
@@ -120,29 +110,27 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);dis
 .mb14{margin-bottom:14px;}
 .mb18{margin-bottom:18px;}
 
-/* SEC HEADER */
+/* ── SEC HEADER ── */
 .sec-hdr{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:18px;}
 .sec-hdr h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--text);}
 .sec-hdr p{font-size:0.76rem;color:var(--text-3);margin-top:2px;}
 .gold-line{width:28px;height:2px;background:var(--gold);margin:3px 0 0;}
 .sec-actions{display:flex;gap:7px;align-items:center;flex-shrink:0;}
 
-/* BUTTONS */
+/* ── BUTTONS ── */
 .btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:var(--r-md);font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:500;cursor:pointer;border:none;transition:all var(--t);white-space:nowrap;}
 .btn .material-icons-round{font-size:15px;}
 .btn-gold{background:var(--gold);color:#111;font-weight:600;}
 .btn-gold:hover{background:var(--gold-light);}
 .btn-outline{background:transparent;color:var(--text-2);border:1px solid var(--border);}
-.btn-outline:hover{background:var(--bg-3);color:var(--text);border-color:var(--bg-5);}
-.btn-ghost{background:transparent;color:var(--gold);border:1px solid var(--border-gold);}
-.btn-ghost:hover{background:rgba(184,150,46,.08);}
+.btn-outline:hover{background:var(--bg-3);color:var(--text);}
 .btn-dark{background:var(--bg-4);color:var(--text-2);border:1px solid var(--border);}
 .btn-dark:hover{background:var(--bg-5);color:var(--text);}
 .btn-ok{background:var(--success);color:var(--text);}
 .btn-sm{padding:5px 11px;font-size:0.76rem;}
 .btn-xs{padding:3px 8px;font-size:0.71rem;border-radius:var(--r-sm);}
 
-/* TABLE */
+/* ── TABLE ── */
 .tw{overflow-x:auto;}
 table{width:100%;border-collapse:collapse;font-size:0.82rem;}
 thead tr{background:var(--bg-3);}
@@ -151,7 +139,7 @@ td{padding:10px 13px;border-bottom:1px solid var(--border);color:var(--text-2);v
 tr:last-child td{border-bottom:none;}
 tbody tr:hover td{background:var(--bg-3);color:var(--text);}
 
-/* CHIPS */
+/* ── CHIPS ── */
 .chip{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:0.7rem;font-weight:500;}
 .c-gold{background:rgba(184,150,46,.15);color:var(--gold-light);border:1px solid rgba(184,150,46,.25);}
 .c-ok{background:rgba(74,122,90,.15);color:#6aaa82;border:1px solid rgba(74,122,90,.25);}
@@ -160,7 +148,7 @@ tbody tr:hover td{background:var(--bg-3);color:var(--text);}
 .c-info{background:rgba(46,88,128,.15);color:#6498c8;border:1px solid rgba(46,88,128,.25);}
 .c-n{background:var(--bg-4);color:var(--text-2);border:1px solid var(--border);}
 
-/* FORMS */
+/* ── FORMS ── */
 .fg{margin-bottom:12px;}
 .fr{display:grid;gap:10px;margin-bottom:12px;}
 .fr.c2{grid-template-columns:1fr 1fr;}
@@ -170,9 +158,8 @@ input[type=text],input[type=email],input[type=tel],input[type=number],input[type
 input:focus,select:focus,textarea:focus{border-color:var(--gold-dim);}
 select option{background:var(--bg-3);}
 textarea{resize:vertical;min-height:68px;}
-select{cursor:pointer;}
 
-/* FILTERS */
+/* ── FILTERS ── */
 .filters{display:flex;align-items:center;gap:9px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-md);padding:9px 14px;margin-bottom:14px;flex-wrap:wrap;}
 .fi{display:flex;align-items:center;gap:6px;flex:1;}
 .fi .material-icons-round{font-size:15px;color:var(--text-3);}
@@ -182,7 +169,7 @@ select{cursor:pointer;}
 .fs{background:transparent;border:none;outline:none;color:var(--text-2);font-family:'DM Sans',sans-serif;font-size:0.8rem;cursor:pointer;}
 .fs option{background:var(--bg-3);}
 
-/* MODAL */
+/* ── MODAL ── */
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:1000;align-items:center;justify-content:center;}
 .overlay.open{display:flex;}
 .modal{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-lg);width:90%;max-width:520px;max-height:90vh;overflow-y:auto;animation:mIn .2s ease;}
@@ -195,7 +182,7 @@ select{cursor:pointer;}
 .modal::-webkit-scrollbar{width:4px;}
 .modal::-webkit-scrollbar-thumb{background:var(--bg-4);border-radius:2px;}
 
-/* TOASTS */
+/* ── TOASTS ── */
 .toasts{position:fixed;bottom:18px;right:18px;display:flex;flex-direction:column;gap:7px;z-index:9999;}
 .toast{background:var(--bg-4);border:1px solid var(--border);border-radius:var(--r-md);padding:10px 14px;font-size:0.81rem;color:var(--text);display:flex;align-items:center;gap:9px;min-width:220px;animation:tIn .2s ease;}
 .toast .material-icons-round{font-size:15px;}
@@ -209,13 +196,13 @@ select{cursor:pointer;}
 .t-info .material-icons-round{color:#6498c8;}
 @keyframes tIn{from{transform:translateX(36px);opacity:0;}to{transform:none;opacity:1;}}
 
-/* TABS */
+/* ── TABS ── */
 .tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:14px;}
 .tab{padding:8px 16px;font-size:0.81rem;font-weight:500;color:var(--text-3);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all var(--t);}
 .tab:hover{color:var(--text);}
 .tab.active{color:var(--gold);border-bottom-color:var(--gold);}
 
-/* TOGGLE */
+/* ── TOGGLE ── */
 .toggle{position:relative;display:inline-block;width:38px;height:21px;flex-shrink:0;}
 .toggle input{opacity:0;width:0;height:0;}
 .tsl{position:absolute;cursor:pointer;inset:0;background:var(--bg-5);border-radius:21px;transition:.22s;}
@@ -223,7 +210,7 @@ select{cursor:pointer;}
 .toggle input:checked+.tsl{background:var(--gold-dim);}
 .toggle input:checked+.tsl:before{transform:translateX(17px);background:var(--gold);}
 
-/* APPOINTMENT ROW */
+/* ── APPOINTMENT ROW ── */
 .ar{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid var(--border);}
 .ar:last-child{border-bottom:none;}
 .ar-time{font-size:0.72rem;font-weight:600;color:var(--gold);min-width:36px;text-align:right;}
@@ -232,7 +219,7 @@ select{cursor:pointer;}
 .ar-svc{font-size:0.72rem;color:var(--text-3);}
 .ar-price{margin-left:auto;font-size:0.82rem;font-weight:600;color:var(--gold);}
 
-/* CALENDAR */
+/* ── CALENDAR ── */
 .cal-nav{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);}
 .cal-m{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--text);}
 .cal-btn{width:28px;height:28px;border-radius:var(--r-sm);background:var(--bg-3);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text-2);transition:all var(--t);}
@@ -254,13 +241,13 @@ select{cursor:pointer;}
 .tev.c2{border-left-color:#6aaa82;}
 .tev.c3{border-left-color:#6498c8;}
 
-/* QUICK ACTIONS */
+/* ── QUICK ACTIONS ── */
 .qa-g{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
 .qa{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 8px;border:1px solid var(--border);border-radius:var(--r-md);cursor:pointer;transition:all var(--t);color:var(--text-2);font-size:0.74rem;font-weight:500;text-align:center;background:var(--bg-3);}
 .qa:hover{border-color:var(--border-gold);color:var(--gold);background:var(--bg-4);}
 .qa .material-icons-round{font-size:20px;}
 
-/* STOCK BAR */
+/* ── STOCK BAR ── */
 .sb-w{width:65px;}
 .sb{height:3px;border-radius:2px;background:var(--bg-4);overflow:hidden;}
 .sb-f{height:100%;border-radius:2px;}
@@ -268,15 +255,13 @@ select{cursor:pointer;}
 .s-low{background:var(--warning);}
 .s-out{background:var(--error);}
 
-/* CLIENT CARD */
+/* ── CLIENT CARD ── */
 .cc{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-lg);padding:14px;display:flex;align-items:flex-start;gap:11px;transition:border-color var(--t);cursor:pointer;}
 .cc:hover{border-color:var(--border-gold);}
-
-/* AVATAR */
 .av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--bg);flex-shrink:0;background:var(--gold-dim);}
 .av-lg{width:42px;height:42px;font-size:14px;}
 
-/* MISC */
+/* ── MISC ── */
 .divider{height:1px;background:var(--border);margin:12px 0;}
 .text-gold{color:var(--gold);}
 .text-m{color:var(--text-3);}
@@ -296,17 +281,48 @@ select{cursor:pointer;}
 </head>
 <body>
 
-<!-- SIDEBAR -->
+<!-- ══ SIDEBAR ══ -->
 <aside class="sidebar">
+
+  <!-- LOGO VECTORIZADO -->
   <div class="sb-logo">
-    <div class="brand">
-      <div class="brand-icon">✂</div>
-      <div>
-        <div class="brand-name">Marisa</div>
-        <div class="brand-sub">Intranet · Gestión</div>
-      </div>
-    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 82" width="210" height="75">
+      <!-- PELUQUERÍA letras espaciadas -->
+      <text
+        x="115" y="17"
+        font-family="'DM Sans', Arial, sans-serif"
+        font-size="9"
+        font-weight="600"
+        letter-spacing="3.8"
+        fill="#C8B896"
+        text-anchor="middle">PELUQUERÍA</text>
+      <!-- punto dorado sobre la Q (aprox. posición) -->
+      <circle cx="120" cy="6" r="2.3" fill="#B8962E"/>
+
+      <!-- Marisa – grande, italic serif -->
+      <text
+        x="115" y="57"
+        font-family="'Cormorant Garamond', Georgia, serif"
+        font-size="42"
+        font-style="italic"
+        font-weight="400"
+        fill="#F0EAD6"
+        text-anchor="middle"
+        letter-spacing="-0.5">Marisa</text>
+
+      <!-- Mónica Pérez Bernabeu -->
+      <text
+        x="115" y="72"
+        font-family="'DM Sans', Arial, sans-serif"
+        font-size="7.5"
+        font-weight="400"
+        letter-spacing="1"
+        fill="#7A6A52"
+        text-anchor="middle">Mónica Pérez Bernabeu</text>
+    </svg>
+    <div class="sb-intranet">Intranet · Gestión</div>
   </div>
+
   <nav class="nav">
     <div class="nav-lbl">Principal</div>
     <div class="nav-item active" onclick="goTo('dashboard',this)"><span class="material-icons-round">dashboard</span>Dashboard</div>
@@ -319,6 +335,7 @@ select{cursor:pointer;}
     <div class="nav-item" onclick="goTo('servicios',this)"><span class="material-icons-round">content_cut</span>Servicios</div>
     <div class="nav-item" onclick="goTo('configuracion',this)"><span class="material-icons-round">settings</span>Configuración</div>
   </nav>
+
   <div class="sb-user">
     <div class="user-card">
       <div class="u-av">M</div>
@@ -328,18 +345,18 @@ select{cursor:pointer;}
   </div>
 </aside>
 
-<!-- MAIN -->
+<!-- ══ MAIN ══ -->
 <div class="main">
   <header class="topbar">
     <div class="tb-title" id="page-title">Dashboard</div>
     <div class="srch"><span class="material-icons-round">search</span><input placeholder="Buscar clientas, citas, facturas…"/></div>
-    <button class="icon-btn" title="Notificaciones"><span class="material-icons-round">notifications</span><span class="notif-dot"></span></button>
-    <button class="icon-btn" title="Ayuda"><span class="material-icons-round">help_outline</span></button>
+    <button class="icon-btn"><span class="material-icons-round">notifications</span><span class="notif-dot"></span></button>
+    <button class="icon-btn"><span class="material-icons-round">help_outline</span></button>
   </header>
 
   <div class="content">
 
-    <!-- DASHBOARD -->
+    <!-- ═══ DASHBOARD ═══ -->
     <section id="dashboard" class="section active">
       <div class="sec-hdr">
         <div><h2>Buenos días, Mónica ☀️</h2><div class="gold-line"></div><p id="today-date" style="margin-top:5px"></p></div>
@@ -366,7 +383,7 @@ select{cursor:pointer;}
             <div class="ar"><div class="ar-time">16:00</div><div class="ar-dot" style="background:var(--gold)"></div><div><div class="ar-name">Ana Pérez</div><div class="ar-svc">Mechas + Tratamiento</div></div><span class="chip c-ok" style="margin-left:auto">Confirmada</span><div class="ar-price">110€</div></div>
             <div class="ar"><div class="ar-time">17:30</div><div class="ar-dot" style="background:#c47060"></div><div><div class="ar-name">María González</div><div class="ar-svc">Permanente</div></div><span class="chip c-warn" style="margin-left:auto">Pendiente</span><div class="ar-price">55€</div></div>
           </div>
-          <div style="padding:10px 18px;border-top:1px solid var(--border);text-align:right"><span class="text-sm text-m">Total estimado: </span><span class="fw6 text-gold">348€</span></div>
+          <div style="padding:10px 18px;border-top:1px solid var(--border);text-align:right"><span class="text-sm text-m">Total estimado hoy: </span><span class="fw6 text-gold">348€</span></div>
         </div>
         <div style="display:flex;flex-direction:column;gap:12px">
           <div class="card">
@@ -381,7 +398,7 @@ select{cursor:pointer;}
             </div>
           </div>
           <div class="card">
-            <div class="card-hdr"><div class="card-title" style="color:var(--warning)">⚠ Stock Bajo</div><button class="btn btn-dark btn-sm" onclick="goTo('almacen',null)">Ver todo</button></div>
+            <div class="card-hdr"><div class="card-title" style="color:#c4a84e">⚠ Stock Bajo</div><button class="btn btn-dark btn-sm" onclick="goTo('almacen',null)">Ver todo</button></div>
             <div style="padding:6px 18px 12px">
               <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)"><div><div class="text-sm fw6">Tinte Loreal Nº5</div><div class="text-xs text-m">Quedan 2 ud.</div></div><span class="chip c-err">Crítico</span></div>
               <div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)"><div><div class="text-sm fw6">Agua oxigenada 30V</div><div class="text-xs text-m">Quedan 3 ud.</div></div><span class="chip c-warn">Bajo</span></div>
@@ -402,7 +419,7 @@ select{cursor:pointer;}
       </div>
     </section>
 
-    <!-- CLIENTAS -->
+    <!-- ═══ CLIENTAS ═══ -->
     <section id="clientes" class="section">
       <div class="sec-hdr">
         <div><h2>Clientas</h2><div class="gold-line"></div><p style="margin-top:5px">Gestión de la cartera de clientas</p></div>
@@ -421,7 +438,7 @@ select{cursor:pointer;}
       <div id="cli-g" style="display:grid;grid-template-columns:1fr 1fr;gap:10px"></div>
     </section>
 
-    <!-- CALENDARIO -->
+    <!-- ═══ CALENDARIO ═══ -->
     <section id="calendario" class="section">
       <div class="sec-hdr">
         <div><h2>Calendario</h2><div class="gold-line"></div><p style="margin-top:5px">Agenda y programación de citas</p></div>
@@ -452,21 +469,18 @@ select{cursor:pointer;}
             <div class="trow"><div class="tlbl">9:00</div><div class="tcon"><div class="tev">Rosa Martínez — Tinte + Corte · 65€ <span class="chip c-ok" style="margin-left:5px;font-size:.62rem">Confirmada</span></div></div></div>
             <div class="trow"><div class="tlbl">9:30</div><div class="tcon"></div></div>
             <div class="trow"><div class="tlbl">10:30</div><div class="tcon"><div class="tev c2">Carmen López — Peinado novia · 90€ <span class="chip c-ok" style="margin-left:5px;font-size:.62rem">Confirmada</span></div></div></div>
-            <div class="trow"><div class="tlbl">11:30</div><div class="tcon"></div></div>
             <div class="trow"><div class="tlbl">12:00</div><div class="tcon"><div class="tev c3">Lucía Fernández — Corte y secado · 28€ <span class="chip c-warn" style="margin-left:5px;font-size:.62rem">Pendiente</span></div></div></div>
             <div class="trow"><div class="tlbl">13:00</div><div class="tcon"></div></div>
             <div class="trow"><div class="tlbl">14:00</div><div class="tcon"><div class="text-xs text-m" style="padding-top:3px">— Cierre mediodía —</div></div></div>
             <div class="trow"><div class="tlbl">16:00</div><div class="tcon"><div class="tev">Ana Pérez — Mechas + Tratamiento · 110€ <span class="chip c-ok" style="margin-left:5px;font-size:.62rem">Confirmada</span></div></div></div>
-            <div class="trow"><div class="tlbl">17:00</div><div class="tcon"></div></div>
             <div class="trow"><div class="tlbl">17:30</div><div class="tcon"><div class="tev c2">María González — Permanente · 55€ <span class="chip c-warn" style="margin-left:5px;font-size:.62rem">Pendiente</span></div></div></div>
-            <div class="trow"><div class="tlbl">18:30</div><div class="tcon"></div></div>
             <div class="trow"><div class="tlbl">19:00</div><div class="tcon"><div class="text-xs text-m" style="padding-top:3px">— Fin de jornada —</div></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FACTURACIÓN -->
+    <!-- ═══ FACTURACIÓN ═══ -->
     <section id="facturacion" class="section">
       <div class="sec-hdr">
         <div><h2>Facturación</h2><div class="gold-line"></div><p style="margin-top:5px">Registro de cobros y facturas</p></div>
@@ -489,13 +503,11 @@ select{cursor:pointer;}
         <div class="fi"><span class="material-icons-round">search</span><input placeholder="Buscar factura, clienta…"/></div>
         <div class="fd"></div>
         <select class="fs"><option>Marzo 2026</option><option>Febrero 2026</option><option>Enero 2026</option></select>
-        <div class="fd"></div>
-        <select class="fs"><option>Todos los servicios</option><option>Tintes</option><option>Cortes</option><option>Peinados</option><option>Tratamientos</option></select>
       </div>
       <div class="card"><div class="tw"><table><thead><tr><th>Nº</th><th>Clienta</th><th>Servicio</th><th>Fecha</th><th>Importe</th><th>Pago</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="fact-tb"></tbody></table></div></div>
     </section>
 
-    <!-- ALMACÉN -->
+    <!-- ═══ ALMACÉN ═══ -->
     <section id="almacen" class="section">
       <div class="sec-hdr">
         <div><h2>Almacén</h2><div class="gold-line"></div><p style="margin-top:5px">Control de stock y productos</p></div>
@@ -519,7 +531,7 @@ select{cursor:pointer;}
       <div class="card"><div class="tw"><table><thead><tr><th>Producto</th><th>Categoría</th><th>Stock</th><th>Mínimo</th><th>Nivel</th><th>Proveedor</th><th>Coste</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="alm-tb"></tbody></table></div></div>
     </section>
 
-    <!-- SERVICIOS -->
+    <!-- ═══ SERVICIOS ═══ -->
     <section id="servicios" class="section">
       <div class="sec-hdr">
         <div><h2>Servicios & Tarifas</h2><div class="gold-line"></div><p style="margin-top:5px">Catálogo de servicios del salón</p></div>
@@ -528,7 +540,7 @@ select{cursor:pointer;}
       <div id="svc-g" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px"></div>
     </section>
 
-    <!-- CONFIGURACIÓN -->
+    <!-- ═══ CONFIGURACIÓN ═══ -->
     <section id="configuracion" class="section">
       <div class="sec-hdr">
         <div><h2>Configuración</h2><div class="gold-line"></div><p style="margin-top:5px">Ajustes del salón y la aplicación</p></div>
@@ -575,12 +587,12 @@ select{cursor:pointer;}
   </div>
 </div>
 
-<!-- MODALES -->
+<!-- ══ MODALES ══ -->
 <div class="overlay" id="m-cita">
   <div class="modal">
     <div class="m-hdr"><div class="m-title">✂ Nueva Cita</div><button class="icon-btn" onclick="closeModal('m-cita')"><span class="material-icons-round">close</span></button></div>
     <div class="m-body">
-      <div class="fr c2"><div><label>Clienta</label><select><option>Rosa Martínez</option><option>Carmen López</option><option>Lucía Fernández</option><option>Ana Pérez</option><option>María González</option><option>— Nueva clienta —</option></select></div><div><label>Servicio</label><select><option>Corte y secado</option><option>Tinte completo</option><option>Mechas / Balayage</option><option>Permanente</option><option>Peinado evento</option><option>Tratamiento keratina</option><option>Manicura</option><option>Maquillaje</option></select></div></div>
+      <div class="fr c2"><div><label>Clienta</label><select><option>Rosa Martínez</option><option>Carmen López</option><option>Lucía Fernández</option><option>Ana Pérez</option><option>María González</option></select></div><div><label>Servicio</label><select><option>Corte y secado</option><option>Tinte completo</option><option>Mechas / Balayage</option><option>Permanente</option><option>Peinado evento</option><option>Tratamiento keratina</option><option>Manicura</option><option>Maquillaje</option></select></div></div>
       <div class="fr c2"><div><label>Fecha</label><input type="date" value="2026-03-09"/></div><div><label>Hora</label><input type="time" value="10:00"/></div></div>
       <div class="fr c2"><div><label>Duración (min)</label><input type="number" value="60" min="15" step="15"/></div><div><label>Precio (€)</label><input type="number" value="45" min="0" step="0.5"/></div></div>
       <div class="fg"><label>Estado</label><select><option>Confirmada</option><option>Pendiente confirmación</option><option>Cancelada</option></select></div>
@@ -599,7 +611,7 @@ select{cursor:pointer;}
       <div class="fg"><label>Dirección</label><input type="text" placeholder="Calle, número, ciudad…"/></div>
       <div class="fr c3"><div><label>Color actual</label><input type="text" placeholder="Ej: Castaño"/></div><div><label>Largo</label><select><option>Corto</option><option>Medio</option><option>Largo</option><option>Muy largo</option></select></div><div><label>Tipo</label><select><option>Estándar</option><option>VIP</option><option>Fidelizada</option></select></div></div>
       <div class="fg"><label>Alergias / Sensibilidades</label><textarea placeholder="Alergias, sensibilidades, tratamientos actuales…"></textarea></div>
-      <div class="fr c2"><div><label>¿Cómo nos conoció?</label><select><option>Recomendación</option><option>Redes sociales</option><option>Pasaba por aquí</option><option>Web</option><option>Otro</option></select></div><div><label>Consentimiento RGPD</label><select><option>Sí, firmado</option><option>Pendiente</option></select></div></div>
+      <div class="fr c2"><div><label>¿Cómo nos conoció?</label><select><option>Recomendación</option><option>Redes sociales</option><option>Pasaba por aquí</option><option>Web</option></select></div><div><label>Consentimiento RGPD</label><select><option>Sí, firmado</option><option>Pendiente</option></select></div></div>
       <div class="fg"><label>Observaciones internas</label><textarea placeholder="Notas internas…"></textarea></div>
     </div>
     <div class="m-foot"><button class="btn btn-outline" onclick="closeModal('m-clienta')">Cancelar</button><button class="btn btn-gold" onclick="sc('m-clienta','Clienta registrada correctamente')"><span class="material-icons-round">person_add</span>Guardar Clienta</button></div>
@@ -611,12 +623,12 @@ select{cursor:pointer;}
     <div class="m-hdr"><div class="m-title">🧾 Nueva Factura</div><button class="icon-btn" onclick="closeModal('m-factura')"><span class="material-icons-round">close</span></button></div>
     <div class="m-body">
       <div class="fr c2"><div><label>Nº Factura</label><input type="text" value="#2026-043" readonly style="opacity:.4;cursor:not-allowed"/></div><div><label>Fecha</label><input type="date" value="2026-03-09"/></div></div>
-      <div class="fr c2"><div><label>Clienta</label><select><option>Rosa Martínez</option><option>Carmen López</option><option>Lucía Fernández</option><option>Ana Pérez</option></select></div><div><label>Cita vinculada</label><select><option>09/03 — Rosa M. — Tinte</option><option>Sin vincular</option></select></div></div>
+      <div class="fr c2"><div><label>Clienta</label><select><option>Rosa Martínez</option><option>Carmen López</option><option>Lucía Fernández</option><option>Ana Pérez</option></select></div><div><label>Método de pago</label><select><option>Efectivo</option><option>Tarjeta</option><option>Bizum</option><option>Transferencia</option></select></div></div>
       <div class="text-xs fw6" style="letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:7px">Líneas de factura</div>
       <div style="background:var(--bg-3);border-radius:var(--r-md);overflow:hidden;border:1px solid var(--border)"><table><thead><tr><th>Descripción</th><th>Cant.</th><th>Precio</th><th>Subtotal</th></tr></thead><tbody><tr><td><input type="text" value="Tinte + Corte" style="background:transparent;border:none;width:100%"/></td><td><input type="number" value="1" style="background:transparent;border:none;width:46px"/></td><td><input type="number" value="65" style="background:transparent;border:none;width:56px"/></td><td class="a-ok fw6">65,00€</td></tr></tbody></table></div>
       <div style="margin-top:9px;display:flex;justify-content:flex-end;gap:7px;align-items:center"><span class="text-sm text-m">Total:</span><span style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--gold)">65,00€</span></div>
       <div class="divider"></div>
-      <div class="fr c2"><div><label>Método de pago</label><select><option>Efectivo</option><option>Tarjeta</option><option>Bizum</option><option>Transferencia</option></select></div><div><label>Estado</label><select><option>Cobrada</option><option>Pendiente</option></select></div></div>
+      <div class="fg"><label>Estado</label><select><option>Cobrada</option><option>Pendiente</option></select></div>
     </div>
     <div class="m-foot"><button class="btn btn-outline" onclick="closeModal('m-factura')">Cancelar</button><button class="btn btn-ok" onclick="sc('m-factura','Factura emitida correctamente')"><span class="material-icons-round">receipt</span>Emitir Factura</button></div>
   </div>
@@ -629,7 +641,6 @@ select{cursor:pointer;}
       <div class="fg"><label>Nombre del producto</label><input type="text" placeholder="Ej: Tinte Loreal Nº7"/></div>
       <div class="fr c2"><div><label>Categoría</label><select><option>Tintes y Color</option><option>Tratamientos</option><option>Styling</option><option>Herramientas</option><option>Desechables</option></select></div><div><label>Proveedor</label><input type="text" placeholder="Nombre del proveedor"/></div></div>
       <div class="fr c3"><div><label>Stock actual</label><input type="number" value="0" min="0"/></div><div><label>Stock mínimo</label><input type="number" value="5" min="0"/></div><div><label>Precio coste (€)</label><input type="number" value="0" step="0.01" min="0"/></div></div>
-      <div class="fg"><label>Referencia / Código</label><input type="text" placeholder="REF-001"/></div>
       <div class="fg"><label>Notas</label><textarea placeholder="Notas adicionales…"></textarea></div>
     </div>
     <div class="m-foot"><button class="btn btn-outline" onclick="closeModal('m-prod')">Cancelar</button><button class="btn btn-gold" onclick="sc('m-prod','Producto añadido al almacén')"><span class="material-icons-round">save</span>Guardar</button></div>
@@ -653,93 +664,86 @@ select{cursor:pointer;}
 
 <script>
 const CLI=[
-  {n:'Rosa Martínez',    t:'621 111 222',e:'rosa@email.com',  col:'Castaño #4',    lar:'Largo',    vis:24,ult:'08/03/2026',tp:'vip',    i:'RM',c:'#8A7022'},
-  {n:'Carmen López',     t:'633 222 333',e:'carmen@email.com',col:'Rubio 9',       lar:'Medio',    vis:18,ult:'01/03/2026',tp:'activa', i:'CL',c:'#4A7A5A'},
-  {n:'Lucía Fernández',  t:'644 333 444',e:'lucia@email.com', col:'Morena',        lar:'Corto',    vis:12,ult:'22/02/2026',tp:'activa', i:'LF',c:'#2E5880'},
-  {n:'Ana Pérez',        t:'655 444 555',e:'ana@email.com',   col:'Castaño #6',    lar:'Muy largo',vis:31,ult:'07/03/2026',tp:'vip',    i:'AP',c:'#8A7022'},
-  {n:'María González',   t:'666 555 666',e:'maria@email.com', col:'Gris cubierto', lar:'Medio',    vis:8, ult:'10/02/2026',tp:'activa', i:'MG',c:'#6E5040'},
-  {n:'Elena Ruiz',       t:'677 666 777',e:'elena@email.com', col:'Rubio 7',       lar:'Largo',    vis:5, ult:'28/01/2026',tp:'activa', i:'ER',c:'#2E5880'},
-  {n:'Isabel Sánchez',   t:'688 777 888',e:'isa@email.com',   col:'Negro azulado', lar:'Largo',    vis:3, ult:'15/01/2026',tp:'inactiva',i:'IS',c:'#5A3A2A'},
-  {n:'Pilar Torres',     t:'699 888 999',e:'pilar@email.com', col:'Castaño #3',    lar:'Corto',    vis:19,ult:'05/03/2026',tp:'vip',    i:'PT',c:'#8A7022'},
+  {n:'Rosa Martínez',  t:'621 111 222',e:'rosa@email.com',  col:'Castaño #4', lar:'Largo',    vis:24,ult:'08/03/2026',tp:'vip',    i:'RM',c:'#8A7022'},
+  {n:'Carmen López',   t:'633 222 333',e:'carmen@email.com',col:'Rubio 9',     lar:'Medio',    vis:18,ult:'01/03/2026',tp:'activa', i:'CL',c:'#4A7A5A'},
+  {n:'Lucía Fernández',t:'644 333 444',e:'lucia@email.com', col:'Morena',      lar:'Corto',    vis:12,ult:'22/02/2026',tp:'activa', i:'LF',c:'#2E5880'},
+  {n:'Ana Pérez',      t:'655 444 555',e:'ana@email.com',   col:'Castaño #6',  lar:'Muy largo',vis:31,ult:'07/03/2026',tp:'vip',    i:'AP',c:'#8A7022'},
+  {n:'María González', t:'666 555 666',e:'maria@email.com', col:'Gris cubierto',lar:'Medio',   vis:8, ult:'10/02/2026',tp:'activa', i:'MG',c:'#6E5040'},
+  {n:'Elena Ruiz',     t:'677 666 777',e:'elena@email.com', col:'Rubio 7',     lar:'Largo',    vis:5, ult:'28/01/2026',tp:'activa', i:'ER',c:'#2E5880'},
+  {n:'Isabel Sánchez', t:'688 777 888',e:'isa@email.com',   col:'Negro azulado',lar:'Largo',   vis:3, ult:'15/01/2026',tp:'inactiva',i:'IS',c:'#5A3A2A'},
+  {n:'Pilar Torres',   t:'699 888 999',e:'pilar@email.com', col:'Castaño #3',  lar:'Corto',    vis:19,ult:'05/03/2026',tp:'vip',    i:'PT',c:'#8A7022'},
 ];
 const FACT=[
-  {id:'#2026-042',cli:'Rosa Martínez',  svc:'Tinte + Corte',      fecha:'08/03/2026',imp:65, pago:'Tarjeta', st:'cobrada'},
-  {id:'#2026-041',cli:'Ana Pérez',       svc:'Mechas completas',    fecha:'07/03/2026',imp:95, pago:'Efectivo',st:'cobrada'},
-  {id:'#2026-040',cli:'Lucía Fernández', svc:'Permanente',          fecha:'06/03/2026',imp:55, pago:'—',       st:'pendiente'},
-  {id:'#2026-039',cli:'Pilar Torres',    svc:'Corte y secado',      fecha:'05/03/2026',imp:28, pago:'Bizum',   st:'cobrada'},
-  {id:'#2026-038',cli:'Carmen López',    svc:'Peinado evento',      fecha:'04/03/2026',imp:75, pago:'Efectivo',st:'cobrada'},
-  {id:'#2026-037',cli:'María González',  svc:'Tinte raíces',        fecha:'03/03/2026',imp:42, pago:'—',       st:'pendiente'},
-  {id:'#2026-036',cli:'Elena Ruiz',      svc:'Corte + Tratamiento', fecha:'01/03/2026',imp:48, pago:'Tarjeta', st:'cobrada'},
-  {id:'#2026-035',cli:'Isabel Sánchez',  svc:'Mechas balayage',     fecha:'28/02/2026',imp:120,pago:'—',       st:'pendiente'},
+  {id:'#2026-042',cli:'Rosa Martínez',  svc:'Tinte + Corte',      fecha:'08/03',imp:65, pago:'Tarjeta', st:'cobrada'},
+  {id:'#2026-041',cli:'Ana Pérez',       svc:'Mechas completas',    fecha:'07/03',imp:95, pago:'Efectivo',st:'cobrada'},
+  {id:'#2026-040',cli:'Lucía Fernández', svc:'Permanente',          fecha:'06/03',imp:55, pago:'—',       st:'pendiente'},
+  {id:'#2026-039',cli:'Pilar Torres',    svc:'Corte y secado',      fecha:'05/03',imp:28, pago:'Bizum',   st:'cobrada'},
+  {id:'#2026-038',cli:'Carmen López',    svc:'Peinado evento',      fecha:'04/03',imp:75, pago:'Efectivo',st:'cobrada'},
+  {id:'#2026-037',cli:'María González',  svc:'Tinte raíces',        fecha:'03/03',imp:42, pago:'—',       st:'pendiente'},
+  {id:'#2026-036',cli:'Elena Ruiz',      svc:'Corte + Tratamiento', fecha:'01/03',imp:48, pago:'Tarjeta', st:'cobrada'},
+  {id:'#2026-035',cli:'Isabel Sánchez',  svc:'Mechas balayage',     fecha:'28/02',imp:120,pago:'—',       st:'pendiente'},
 ];
 const PROD=[
-  {n:'Tinte Loreal Nº5',          cat:'Tintes y Color', s:2,  m:5,  prv:'Loreal Pro',  p:8.50, st:'critico'},
-  {n:'Agua oxigenada 30V',         cat:'Tintes y Color', s:3,  m:8,  prv:'Henkel',      p:3.20, st:'bajo'},
-  {n:'Spray fijador extra fuerte', cat:'Styling',        s:4,  m:6,  prv:'Schwarzkopf', p:5.80, st:'bajo'},
-  {n:'Mascarilla hidratante',      cat:'Tratamientos',   s:0,  m:4,  prv:'Kerastase',   p:22.00,st:'agotado'},
-  {n:'Tinte Loreal Nº7',          cat:'Tintes y Color', s:12, m:5,  prv:'Loreal Pro',  p:8.50, st:'ok'},
-  {n:'Champú neutro profesional',  cat:'Tratamientos',   s:8,  m:4,  prv:'Wella',       p:12.00,st:'ok'},
-  {n:'Gomina modeladora',          cat:'Styling',        s:7,  m:3,  prv:'Schwarzkopf', p:6.40, st:'ok'},
-  {n:'Papel de aluminio',          cat:'Desechables',    s:15, m:5,  prv:'Dist. Pepe',  p:4.00, st:'ok'},
-  {n:'Guantes desechables L',      cat:'Desechables',    s:50, m:20, prv:'Dist. Pepe',  p:0.15, st:'ok'},
-  {n:'Tijeras Jaguar Gold',        cat:'Herramientas',   s:2,  m:1,  prv:'Jaguar',      p:85.00,st:'ok'},
+  {n:'Tinte Loreal Nº5',         cat:'Tintes y Color', s:2, m:5, prv:'Loreal Pro', p:8.50, st:'critico'},
+  {n:'Agua oxigenada 30V',        cat:'Tintes y Color', s:3, m:8, prv:'Henkel',     p:3.20, st:'bajo'},
+  {n:'Spray fijador extra fuerte',cat:'Styling',        s:4, m:6, prv:'Schwarzkopf',p:5.80, st:'bajo'},
+  {n:'Mascarilla hidratante',     cat:'Tratamientos',   s:0, m:4, prv:'Kerastase',  p:22.00,st:'agotado'},
+  {n:'Tinte Loreal Nº7',         cat:'Tintes y Color', s:12,m:5, prv:'Loreal Pro', p:8.50, st:'ok'},
+  {n:'Champú neutro profesional', cat:'Tratamientos',   s:8, m:4, prv:'Wella',      p:12.00,st:'ok'},
+  {n:'Gomina modeladora',         cat:'Styling',        s:7, m:3, prv:'Schwarzkopf',p:6.40, st:'ok'},
+  {n:'Papel de aluminio',         cat:'Desechables',    s:15,m:5, prv:'Dist. Pepe', p:4.00, st:'ok'},
+  {n:'Guantes desechables L',     cat:'Desechables',    s:50,m:20,prv:'Dist. Pepe', p:0.15, st:'ok'},
+  {n:'Tijeras Jaguar Gold',       cat:'Herramientas',   s:2, m:1, prv:'Jaguar',     p:85.00,st:'ok'},
 ];
 const SVC=[
-  {n:'Corte de cabello',     cat:'Corte',        d:45, p:28,  desc:'Corte personalizado + secado profesional.'},
-  {n:'Tinte completo',       cat:'Color',        d:90, p:55,  desc:'Color completo con productos Loreal Professional.'},
-  {n:'Mechas / Balayage',    cat:'Color',        d:120,p:95,  desc:'Técnica de iluminación personalizada.'},
-  {n:'Permanente',           cat:'Tratamientos', d:90, p:55,  desc:'Ondulado permanente con nutrición profunda.'},
-  {n:'Peinados y recogidos', cat:'Peinados',     d:60, p:45,  desc:'Para bodas, comuniones y eventos especiales.'},
-  {n:'Tratamiento keratina', cat:'Tratamientos', d:120,p:80,  desc:'Alisado de larga duración con keratina.'},
-  {n:'Manicura',             cat:'Manicura',     d:60, p:25,  desc:'Manicura completa con semipermanente.'},
-  {n:'Maquillaje',           cat:'Maquillaje',   d:60, p:50,  desc:'Maquillaje profesional para eventos especiales.'},
-  {n:'Moldeados',            cat:'Tratamientos', d:75, p:40,  desc:'Moldeado y definición de rizos.'},
+  {n:'Corte de cabello',    cat:'Corte',       d:45, p:28,desc:'Corte personalizado + secado profesional.'},
+  {n:'Tinte completo',      cat:'Color',       d:90, p:55,desc:'Color completo con productos Loreal Professional.'},
+  {n:'Mechas / Balayage',   cat:'Color',       d:120,p:95,desc:'Técnica de iluminación personalizada.'},
+  {n:'Permanente',          cat:'Tratamientos',d:90, p:55,desc:'Ondulado permanente con nutrición profunda.'},
+  {n:'Peinados y recogidos',cat:'Peinados',    d:60, p:45,desc:'Para bodas, comuniones y eventos especiales.'},
+  {n:'Tratamiento keratina',cat:'Tratamientos',d:120,p:80,desc:'Alisado de larga duración con keratina.'},
+  {n:'Manicura',            cat:'Manicura',    d:60, p:25,desc:'Manicura completa con semipermanente.'},
+  {n:'Maquillaje',          cat:'Maquillaje',  d:60, p:50,desc:'Maquillaje profesional para eventos especiales.'},
+  {n:'Moldeados',           cat:'Tratamientos',d:75, p:40,desc:'Moldeado y definición de rizos.'},
 ];
 const HOR=[
-  {d:'Lunes',     o:true, i:'09:00',f:'19:00'},
-  {d:'Martes',    o:true, i:'09:00',f:'19:00'},
-  {d:'Miércoles', o:true, i:'09:00',f:'19:00'},
-  {d:'Jueves',    o:true, i:'09:00',f:'19:00'},
-  {d:'Viernes',   o:true, i:'09:00',f:'20:00'},
-  {d:'Sábado',    o:true, i:'09:00',f:'14:00'},
-  {d:'Domingo',   o:false,i:'',    f:''},
+  {d:'Lunes',    o:true, i:'09:00',f:'19:00'},
+  {d:'Martes',   o:true, i:'09:00',f:'19:00'},
+  {d:'Miércoles',o:true, i:'09:00',f:'19:00'},
+  {d:'Jueves',   o:true, i:'09:00',f:'19:00'},
+  {d:'Viernes',  o:true, i:'09:00',f:'20:00'},
+  {d:'Sábado',   o:true, i:'09:00',f:'14:00'},
+  {d:'Domingo',  o:false,i:'',     f:''},
 ];
 const TITLES={dashboard:'Dashboard',clientes:'Clientas',calendario:'Calendario de Citas',facturacion:'Facturación',almacen:'Almacén',servicios:'Servicios & Tarifas',configuracion:'Configuración'};
 
-// Nav
 function goTo(id,el){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-  if(el) el.classList.add('active');
+  if(el)el.classList.add('active');
   document.getElementById('page-title').textContent=TITLES[id]||id;
 }
-
-// Modal
 function openModal(id){document.getElementById(id).classList.add('open');}
 function closeModal(id){document.getElementById(id).classList.remove('open');}
 function sc(id,msg){closeModal(id);toast(msg,'ok');}
 document.addEventListener('click',e=>{if(e.target.classList.contains('overlay'))e.target.classList.remove('open');});
 
-// Toast
 function toast(msg,type='ok'){
   const icons={ok:'check_circle',warn:'warning',err:'error',info:'info'};
-  const tc=document.getElementById('toasts');
   const t=document.createElement('div');
   t.className=`toast t-${type}`;
   t.innerHTML=`<span class="material-icons-round">${icons[type]||'info'}</span><span>${msg}</span>`;
-  tc.appendChild(t);
+  document.getElementById('toasts').appendChild(t);
   setTimeout(()=>{t.style.opacity='0';t.style.transform='translateX(36px)';t.style.transition='.18s ease';setTimeout(()=>t.remove(),200);},2600);
 }
 
-// Render clientas
 function rCli(list){
   document.getElementById('cli-g').innerHTML=list.map(c=>`
     <div class="cc">
       <div class="av av-lg" style="background:${c.c}">${c.i}</div>
       <div style="flex:1">
-        <div style="font-size:.88rem;font-weight:600;color:var(--text)">
-          ${c.n}
+        <div style="font-size:.88rem;font-weight:600;color:var(--text)">${c.n}
           ${c.tp==='vip'?'<span class="chip c-gold" style="margin-left:5px;font-size:.6rem">VIP</span>':''}
           ${c.tp==='inactiva'?'<span class="chip c-n" style="margin-left:5px;font-size:.6rem">Inactiva</span>':''}
         </div>
@@ -760,10 +764,9 @@ function rCli(list){
       </div>
     </div>`).join('');
 }
-function fCli(q){rCli(CLI.filter(c=>c.n.toLowerCase().includes(q.toLowerCase())||c.t.includes(q)||c.e.toLowerCase().includes(q.toLowerCase())));}
+function fCli(q){rCli(CLI.filter(c=>c.n.toLowerCase().includes(q.toLowerCase())||c.t.includes(q)));}
 function fCliT(t){rCli(t?CLI.filter(c=>c.tp===t):CLI);}
 
-// Render facturas
 function rFact(list){
   document.getElementById('fact-tb').innerHTML=list.map(f=>`
     <tr>
@@ -785,7 +788,6 @@ function tabF(el,fil){
   rFact(fil==='todas'?FACT:FACT.filter(f=>f.st===fil));
 }
 
-// Render almacen
 function rAlm(){
   const chips={ok:'<span class="chip c-ok">OK</span>',bajo:'<span class="chip c-warn">Bajo</span>',critico:'<span class="chip c-err">Crítico</span>',agotado:'<span class="chip c-err">Sin stock</span>'};
   const fills={ok:'s-ok',bajo:'s-low',critico:'s-low',agotado:'s-out'};
@@ -806,7 +808,6 @@ function rAlm(){
   }).join('');
 }
 
-// Render servicios
 function rSvc(){
   const cc={Corte:'var(--gold)',Color:'#6aaa82',Tratamientos:'#6498c8',Peinados:'#c4a84e',Manicura:'#c47060',Maquillaje:'#a07090'};
   document.getElementById('svc-g').innerHTML=SVC.map(s=>`
@@ -814,7 +815,7 @@ function rSvc(){
       <div class="card-body">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px">
           <div><div style="font-weight:600;font-size:.87rem;color:var(--text)">${s.n}</div><span class="chip c-n" style="margin-top:4px;font-size:.62rem">${s.cat}</span></div>
-          <div style="text-align:right;flex-shrink:0"><div style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--gold)">${s.p}€</div><div class="text-xs text-m">${s.d} min</div></div>
+          <div style="text-align:right"><div style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--gold)">${s.p}€</div><div class="text-xs text-m">${s.d} min</div></div>
         </div>
         <div class="text-xs text-m" style="line-height:1.5">${s.desc}</div>
         <div style="display:flex;gap:5px;margin-top:10px">
@@ -825,7 +826,6 @@ function rSvc(){
     </div>`).join('');
 }
 
-// Render horario
 function rHor(){
   document.getElementById('hor-l').innerHTML=HOR.map(h=>`
     <div style="display:flex;align-items:center;gap:9px">
@@ -837,7 +837,6 @@ function rHor(){
     </div>`).join('');
 }
 
-// Calendar
 let CY=2026,CM=2;
 const EVD=[3,5,9,12,15,18,22,25];
 const MES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
@@ -852,23 +851,22 @@ function rCal(){
   const dp=new Date(CY,CM,0).getDate();
   const today=new Date();
   let h='';
-  for(let i=off-1;i>=0;i--) h+=`<div class="cal-d oth">${dp-i}</div>`;
+  for(let i=off-1;i>=0;i--)h+=`<div class="cal-d oth">${dp-i}</div>`;
   for(let d=1;d<=dim;d++){
     const isT=(d===today.getDate()&&CM===today.getMonth()&&CY===today.getFullYear());
     const hasE=EVD.includes(d);
-    h+=`<div class="cal-d${isT?' today':''}${hasE?' hev':''}" onclick="selD(${d})">${d}</div>`;
+    h+=`<div class="cal-d${isT?' today':''}${hasE?' hev':''}" onclick="selD(${d},event)">${d}</div>`;
   }
   document.getElementById('cal-g').innerHTML=h;
 }
 function cMes(d){CM+=d;if(CM>11){CM=0;CY++;}if(CM<0){CM=11;CY--;}rCal();}
-function selD(d){
+function selD(d,e){
   document.querySelectorAll('.cal-d').forEach(el=>el.style.outline='');
-  event.target.style.outline='2px solid var(--gold)';
+  e.target.style.outline='2px solid var(--gold)';
   const dt=new Date(CY,CM,d);
   document.getElementById('sel-d').textContent=`${WD[dt.getDay()]}, ${d} de ${MES_ES[CM]}`;
 }
 
-// Init
 document.addEventListener('DOMContentLoaded',()=>{
   const now=new Date();
   document.getElementById('today-date').textContent='Hoy, '+now.toLocaleDateString('es-ES',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
